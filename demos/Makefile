@@ -1,7 +1,9 @@
 
 NN2_DIR=install_nn2
 
-CC = gcc/bin/riscv64-unknown-linux-gnu-gcc
+# download xuantie900-newlib-x86_64 toolchain
+# at https://www.xrvm.cn/community/download?id=4333581795569242112
+CC = gcc/xuantie900-newlib-x86_64/bin/riscv64-unknown-elf-gcc
 CFLAGS += -march=rv64gcv_zfh_xtheadc_xtheadmatrix -mabi=lp64d -O2
 INCLUDE += -I ${NN2_DIR}/include
 LDFLAGS_RVM = -L ${NN2_DIR}/lib -lshl_rvm -lm -static -Wl,--no-warn-mismatch
